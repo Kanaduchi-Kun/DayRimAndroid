@@ -1,0 +1,706 @@
+fileFormatVersion: 2
+guid: ec1f02a19125d7d4e9cfa11478dac199
+timeCreated: 1475593475
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: VFX_tippen_0
+    21300002: VFX_tippen_1
+    21300004: VFX_tippen_2
+    21300006: VFX_tippen_3
+    21300008: VFX_tippen_4
+    21300010: VFX_tippen_5
+    21300012: VFX_tippen_6
+    21300014: VFX_tippen_7
+    21300016: VFX_tippen_8
+    21300018: VFX_tippen_9
+    21300020: VFX_tippen_10
+    21300022: VFX_tippen_11
+    21300024: VFX_tippen_12
+    21300026: VFX_tippen_13
+    21300028: VFX_tippen_14
+    21300030: VFX_tippen_15
+    21300032: VFX_tippen_16
+    21300034: VFX_tippen_17
+    21300036: VFX_tippen_18
+    21300038: VFX_tippen_19
+    21300040: VFX_tippen_20
+    21300042: VFX_tippen_21
+    21300044: VFX_tippen_22
+    21300046: VFX_tippen_23
+    21300048: VFX_tippen_24
+    21300050: VFX_tippen_25
+    21300052: VFX_tippen_26
+    21300054: VFX_tippen_27
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: VFX_tippen_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 79}
+        - {x: -79, y: 52}
+        - {x: -79, y: -29}
+        - {x: -64, y: -52}
+        - {x: -50, y: -70}
+        - {x: -36, y: -79}
+        - {x: 45, y: -79}
+        - {x: 79, y: -45}
+        - {x: 79, y: 60}
+        - {x: 45, y: 79}
+    - name: VFX_tippen_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58, y: 72}
+        - {x: -72, y: 45}
+        - {x: -72, y: -51}
+        - {x: -34, y: -72}
+        - {x: 53, y: -72}
+        - {x: 72, y: -46}
+        - {x: 72, y: 58}
+        - {x: 47, y: 72}
+    - name: VFX_tippen_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: 64}
+        - {x: -64, y: 36}
+        - {x: -64, y: -45}
+        - {x: -43, y: -64}
+        - {x: 45, y: -64}
+        - {x: 64, y: -44}
+        - {x: 64, y: 33}
+        - {x: 41, y: 64}
+    - name: VFX_tippen_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: 56}
+        - {x: -56, y: 40}
+        - {x: -56, y: -53}
+        - {x: -53, y: -56}
+        - {x: 50, y: -56}
+        - {x: 56, y: -47}
+        - {x: 56, y: 30}
+        - {x: 40, y: 56}
+    - name: VFX_tippen_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 23}
+        - {x: 28, y: 42}
+        - {x: 11, y: 49}
+        - {x: -19, y: 49}
+        - {x: -47, y: 31}
+        - {x: -49, y: 15}
+        - {x: -49, y: -22}
+        - {x: -31, y: -46}
+        - {x: -9, y: -49}
+        - {x: 21, y: -49}
+        - {x: 45, y: -31}
+        - {x: 49, y: -11}
+        - {x: 49, y: 18}
+    - name: VFX_tippen_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 52}
+        - {x: -52, y: 39}
+        - {x: -52, y: -32}
+        - {x: -22, y: -52}
+        - {x: 27, y: -52}
+        - {x: 37, y: -49}
+        - {x: 52, y: -31}
+        - {x: 52, y: 38}
+        - {x: 46, y: 52}
+    - name: VFX_tippen_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 62}
+        - {x: -57, y: 44}
+        - {x: -62, y: 19}
+        - {x: -62, y: -28}
+        - {x: -33, y: -62}
+        - {x: 30, y: -62}
+        - {x: 62, y: -52}
+        - {x: 62, y: 49}
+        - {x: 24, y: 62}
+    - name: VFX_tippen_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36, y: 71}
+        - {x: -57, y: 71}
+        - {x: -71, y: 26}
+        - {x: -71, y: -47}
+        - {x: -68, y: -57}
+        - {x: -37, y: -71}
+        - {x: 40, y: -71}
+        - {x: 71, y: -39}
+        - {x: 71, y: 33}
+        - {x: 64, y: 52}
+    - name: VFX_tippen_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 81}
+        - {x: -81, y: 48}
+        - {x: -81, y: -42}
+        - {x: -64, y: -77}
+        - {x: -41, y: -81}
+        - {x: 48, y: -81}
+        - {x: 81, y: -53}
+        - {x: 81, y: 39}
+        - {x: 59, y: 81}
+    - name: VFX_tippen_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 56}
+        - {x: 35, y: 91}
+        - {x: -50, y: 91}
+        - {x: -91, y: 39}
+        - {x: -91, y: -36}
+        - {x: -65, y: -88}
+        - {x: -41, y: -91}
+        - {x: 42, y: -91}
+        - {x: 53, y: -84}
+        - {x: 91, y: -47}
+        - {x: 91, y: 39}
+    - name: VFX_tippen_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101, y: 42}
+        - {x: 96, y: 51}
+        - {x: 53, y: 99}
+        - {x: 39, y: 101}
+        - {x: -36, y: 101}
+        - {x: -90, y: 68}
+        - {x: -101, y: 30}
+        - {x: -101, y: -33}
+        - {x: -85, y: -65}
+        - {x: -51, y: -97}
+        - {x: -25, y: -101}
+        - {x: 31, y: -101}
+        - {x: 54, y: -90}
+        - {x: 98, y: -52}
+        - {x: 101, y: -34}
+    - name: VFX_tippen_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111, y: 29}
+        - {x: 91, y: 71}
+        - {x: 72, y: 93}
+        - {x: 29, y: 111}
+        - {x: -45, y: 111}
+        - {x: -104, y: 64}
+        - {x: -111, y: 30}
+        - {x: -111, y: -37}
+        - {x: -78, y: -88}
+        - {x: -41, y: -106}
+        - {x: -29, y: -111}
+        - {x: 24, y: -111}
+        - {x: 63, y: -102}
+        - {x: 93, y: -66}
+        - {x: 110, y: -32}
+        - {x: 111, y: -26}
+    - name: VFX_tippen_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 121, y: -22}
+        - {x: 121, y: 15}
+        - {x: 118, y: 36}
+        - {x: 103, y: 69}
+        - {x: 78, y: 99}
+        - {x: 30, y: 121}
+        - {x: -30, y: 121}
+        - {x: -73, y: 108}
+        - {x: -121, y: 51}
+        - {x: -121, y: -38}
+        - {x: -102, y: -68}
+        - {x: -86, y: -91}
+        - {x: -40, y: -119}
+        - {x: -23, y: -121}
+        - {x: 14, y: -121}
+        - {x: 33, y: -120}
+        - {x: 69, y: -103}
+        - {x: 90, y: -85}
+        - {x: 116, y: -46}
+    - name: VFX_tippen_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 128, y: -32}
+        - {x: 128, y: 30}
+        - {x: 123, y: 49}
+        - {x: 105, y: 85}
+        - {x: 70, y: 114}
+        - {x: 37, y: 128}
+        - {x: -34, y: 128}
+        - {x: -63, y: 119}
+        - {x: -97, y: 94}
+        - {x: -125, y: 49}
+        - {x: -128, y: 32}
+        - {x: -128, y: -34}
+        - {x: -118, y: -63}
+        - {x: -105, y: -85}
+        - {x: -64, y: -120}
+        - {x: -39, y: -128}
+        - {x: 41, y: -128}
+        - {x: 76, y: -110}
+        - {x: 107, y: -80}
+        - {x: 123, y: -49}
+    - name: VFX_tippen_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 128, y: -37}
+        - {x: 128, y: 35}
+        - {x: 116, y: 64}
+        - {x: 93, y: 97}
+        - {x: 47, y: 127}
+        - {x: 44, y: 128}
+        - {x: -39, y: 128}
+        - {x: -50, y: 127}
+        - {x: -79, y: 107}
+        - {x: -107, y: 78}
+        - {x: -125, y: 46}
+        - {x: -128, y: 33}
+        - {x: -128, y: -36}
+        - {x: -116, y: -64}
+        - {x: -91, y: -96}
+        - {x: -70, y: -115}
+        - {x: -35, y: -128}
+        - {x: 36, y: -128}
+        - {x: 65, y: -117}
+        - {x: 98, y: -93}
+        - {x: 126, y: -47}
+    - name: VFX_tippen_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118, y: -30}
+        - {x: 118, y: 31}
+        - {x: 99, y: 80}
+        - {x: 60, y: 105}
+        - {x: 28, y: 118}
+        - {x: -29, y: 118}
+        - {x: -60, y: 105}
+        - {x: -78, y: 95}
+        - {x: -113, y: 48}
+        - {x: -118, y: 32}
+        - {x: -118, y: -38}
+        - {x: -96, y: -78}
+        - {x: -49, y: -115}
+        - {x: -23, y: -118}
+        - {x: 31, y: -118}
+        - {x: 66, y: -103}
+        - {x: 94, y: -76}
+        - {x: 116, y: -36}
+    - name: VFX_tippen_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: 69}
+        - {x: 60, y: 90}
+        - {x: 27, y: 105}
+        - {x: -42, y: 105}
+        - {x: -85, y: 69}
+        - {x: -105, y: 42}
+        - {x: -105, y: -46}
+        - {x: -69, y: -86}
+        - {x: -40, y: -105}
+        - {x: 35, y: -105}
+        - {x: 62, y: -93}
+        - {x: 105, y: -40}
+        - {x: 105, y: 29}
+    - name: VFX_tippen_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 64}
+        - {x: 38, y: 92}
+        - {x: -37, y: 92}
+        - {x: -84, y: 68}
+        - {x: -92, y: 41}
+        - {x: -92, y: -41}
+        - {x: -49, y: -92}
+        - {x: 34, y: -92}
+        - {x: 79, y: -64}
+        - {x: 92, y: -46}
+        - {x: 92, y: 35}
+    - name: VFX_tippen_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61, y: 79}
+        - {x: -48, y: 79}
+        - {x: -79, y: 52}
+        - {x: -79, y: -33}
+        - {x: -59, y: -79}
+        - {x: 35, y: -79}
+        - {x: 70, y: -49}
+        - {x: 79, y: -42}
+        - {x: 79, y: 44}
+    - name: VFX_tippen_19
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 66}
+        - {x: -66, y: 37}
+        - {x: -66, y: -40}
+        - {x: -38, y: -66}
+        - {x: 28, y: -66}
+        - {x: 50, y: -62}
+        - {x: 66, y: -39}
+        - {x: 66, y: 55}
+        - {x: 28, y: 66}
+    - name: VFX_tippen_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 54}
+        - {x: -54, y: 33}
+        - {x: -54, y: -32}
+        - {x: -24, y: -54}
+        - {x: 38, y: -54}
+        - {x: 54, y: -27}
+        - {x: 54, y: 53}
+        - {x: 49, y: 54}
+    - name: VFX_tippen_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 42}
+        - {x: -42, y: 34}
+        - {x: -42, y: -31}
+        - {x: -21, y: -42}
+        - {x: 28, y: -42}
+        - {x: 42, y: -27}
+        - {x: 42, y: 26}
+        - {x: 28, y: 42}
+    - name: VFX_tippen_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 37}
+        - {x: -23, y: 37}
+        - {x: -37, y: 27}
+        - {x: -37, y: -17}
+        - {x: -27, y: -37}
+        - {x: 20, y: -37}
+        - {x: 37, y: -23}
+        - {x: 37, y: 15}
+        - {x: 28, y: 35}
+    - name: VFX_tippen_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 31}
+        - {x: -31, y: 30}
+        - {x: -31, y: -17}
+        - {x: -26, y: -31}
+        - {x: 14, y: -31}
+        - {x: 31, y: -26}
+        - {x: 31, y: 23}
+        - {x: 28, y: 31}
+    - name: VFX_tippen_24
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 25}
+        - {x: -19, y: 25}
+        - {x: -25, y: 14}
+        - {x: -25, y: -19}
+        - {x: -19, y: -23}
+        - {x: -8, y: -25}
+        - {x: 14, y: -25}
+        - {x: 23, y: -19}
+        - {x: 25, y: -11}
+        - {x: 25, y: 15}
+    - name: VFX_tippen_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 20}
+        - {x: -20, y: -7}
+        - {x: -13, y: -20}
+        - {x: 14, y: -20}
+        - {x: 20, y: -7}
+        - {x: 20, y: 20}
+    - name: VFX_tippen_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 14}
+        - {x: -13, y: 12}
+        - {x: -14, y: 8}
+        - {x: -14, y: -7}
+        - {x: -11, y: -12}
+        - {x: -6, y: -14}
+        - {x: 8, y: -14}
+        - {x: 14, y: -7}
+        - {x: 14, y: 8}
+        - {x: 7, y: 14}
+    - name: VFX_tippen_27
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 8}
+        - {x: -5, y: 8}
+        - {x: -8, y: 4}
+        - {x: -8, y: -4}
+        - {x: -4, y: -8}
+        - {x: 3, y: -8}
+        - {x: 8, y: -6}
+        - {x: 8, y: 5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
