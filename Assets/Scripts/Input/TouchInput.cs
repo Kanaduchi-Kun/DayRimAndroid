@@ -5,11 +5,34 @@ using UnityEngine.UI;
 using UniRx;
 using System;
 
-public class TouchInput : MonoBehaviour {
+public class TouchInput : MonoBehaviour
+{
 
     public static TouchInput instance;
 
     public Text textfeld;
+
+    bool tooFarMoved;
+
+    float initial_x;
+    float initial_y;
+
+    float actual_x;
+    float actual_y;
+
+    public float tolerance = 30.0f;
+
+    private void Awake()
+    {
+        initial_x = 0.0f;
+        initial_y = 0.0f;
+
+        actual_x = 0.0f;
+        actual_y = 0.0f;
+
+        tooFarMoved = false;
+    }
+
 
 
     // Use this for initialization
@@ -17,37 +40,92 @@ public class TouchInput : MonoBehaviour {
     {
 
         
-        /*  
-        // DOPPELKLICK
         var clickStream = Observable.EveryUpdate()
-              // .Where(_ => Input.GetTouch(0).phase == TouchPhase.Began);
               .Where(_ => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
 
+        clickStream.Subscribe(xs => { initial_x = Input.GetTouch(0).position.x;
+                                      initial_y = Input.GetTouch(0).position.y;
+        });
+
+
+        // DOPPELKLICK
         clickStream.Buffer(clickStream.Throttle(TimeSpan.FromMilliseconds(250)))
             .Where(xs => xs.Count >= 2)
-            .Subscribe(xs => textfeld.text = ("DoubleClick Detected! Count:" + xs.Count));
-        //clickStream.TimeInterval(TimeSpan.FromMilliseconds(300))
-        */
+            .Subscribe(xs => textfeld.text = ("DoubleClick Detected at X:" + initial_x + " Y:" + initial_y));
+
+
+        //Einfachklick!!!
+        var OneClickStream = Observable.EveryUpdate()
+             .Where(_ => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended);
+             //.Where(_ => Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(0).phase == TouchPhase.Ended));
+
+        OneClickStream.Buffer(clickStream.Throttle(TimeSpan.FromMilliseconds(250)))
+            .Where(xs => xs.Count == 1)
+            .Subscribe(xs => { textfeld.text = ("Simple Click Detected at" + initial_x + " Y:" + initial_y);
+                tooFarMoved = false; });
+
+
 
         // Auf der stelle gedrückt halten
         var clickHoldStream = Observable.EveryUpdate()
               // .Where(_ => Input.GetTouch(0).phase == TouchPhase.Began);
-              .Where(_ => Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Stationary || Input.GetTouch(0).phase == TouchPhase.Moved));
+              .Where(_ => Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Stationary || Input.GetTouch(0).phase == TouchPhase.Moved) && !tooFarMoved);
 
-        clickHoldStream.Buffer(clickHoldStream.Throttle(TimeSpan.FromMilliseconds(10)))
-            .Subscribe(xs => textfeld.text = xs.Count + "");
-
+       
 
 
+        clickHoldStream.Buffer(clickHoldStream.Throttle(TimeSpan.FromMilliseconds(250)))
+        .Where(xs => xs.Count >= 22)
+        .Subscribe(xs => {
+            textfeld.text = "TOUCH-HOLD! at X:" + actual_x + " Y:" + actual_y;
+            tooFarMoved = false;
+        });
+        //.Subscribe(xs => textfeld.text = "TOUCH-HOLD! and moved from X:" + initial_x + " Y:" + initial_y + "to NEW-X:" + Input.GetTouch(0).position.x + "NEW-Y:" + Input.GetTouch(0).position.y);
+
+        //.Subscribe(xs => { initial_x = Input.GetTouch(0).position.x;
+        //                   initial_y = Input.GetTouch(0).position.y;   });
+
+        //clickHoldStream.Buffer(clickHoldStream.Throttle(TimeSpan.FromMilliseconds(300)))
 
 
+
+
+        // Stream der beim Ende eines Touch auslöst
+        var EndOfTouchStream = Observable.EveryUpdate()
+              // .Where(_ => Input.GetTouch(0).phase == TouchPhase.Began);
+              .Where(_ => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+              .Subscribe(xs =>
+                         {
+                             actual_x = Input.GetTouch(0).position.x;
+                             actual_y = Input.GetTouch(0).position.y;
+                         });
+
+
+        // Stream der beim Bewegen eines Touch auslöst
+        var MoveOfTouchStream = Observable.EveryUpdate()
+              // .Where(_ => Input.GetTouch(0).phase == TouchPhase.Began);
+              .Where(_ => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+              .Subscribe(xs =>
+              {
+                 if((initial_x - tolerance > Input.GetTouch(0).position.x) || (initial_x + tolerance < Input.GetTouch(0).position.x))
+                  {
+                      tooFarMoved = true;
+                  }
+                 else if ((initial_y - tolerance > Input.GetTouch(0).position.y) || (initial_y + tolerance < Input.GetTouch(0).position.y))
+                  { tooFarMoved = true; }
+                  else
+                  {
+                      tooFarMoved = false;
+                  }
+              });
 
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
-       
+
 
         /*
 

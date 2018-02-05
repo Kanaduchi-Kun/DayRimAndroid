@@ -17,7 +17,7 @@ public class XMLTreeLoader : MonoBehaviour {
 
         foreach (XmlNode dialogNode in node)
         {
-
+            Debug.Log(dialogNode.ParentNode);
         }
 
 

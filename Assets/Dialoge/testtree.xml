@@ -11,9 +11,21 @@
 	<dialogtree>
 		<name> Syrx</name>
 		<text> Sersi</text>
+     <dialogtree>
+	    	<name> Syrx2</name>
+	    	<text> Was geht?</text>
+	    </dialogtree>
 	</dialogtree>
 	<dialogtree>
 		<name> Mero </name>
-		<text> Ich f�hre selbstgespr�che </text>
+		<text> Ich führe selbstgespräche </text>
+       <dialogtree>
+	     	<name> Mero2 </name>
+	     	<text> Ich führe selbstgespräche </text>
+	     </dialogtree>
+       <dialogtree>
+	     	<name> Mero3 </name>
+	     	<text> Ich führe selbstgespräche </text>
+	     </dialogtree>
 	</dialogtree>
 </dialogtree>
