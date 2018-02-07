@@ -14,6 +14,8 @@ public class TouchInput : MonoBehaviour
 
     bool tooFarMoved;
 
+    Vector3 pos;
+
     float initial_x;
     float initial_y;
 
@@ -24,6 +26,15 @@ public class TouchInput : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(this);
+        }
+
+        pos = new Vector3(0.0f, 0.0f, 0.0f);
+
+        instance = this;
+
         initial_x = 0.0f;
         initial_y = 0.0f;
 
@@ -43,7 +54,9 @@ public class TouchInput : MonoBehaviour
         var clickStream = Observable.EveryUpdate()
               .Where(_ => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
 
-        clickStream.Subscribe(xs => { initial_x = Input.GetTouch(0).position.x;
+        clickStream.Subscribe(xs => {
+                                      pos = Input.GetTouch(0).position;
+                                      initial_x = Input.GetTouch(0).position.x;
                                       initial_y = Input.GetTouch(0).position.y;
         });
 
@@ -51,7 +64,12 @@ public class TouchInput : MonoBehaviour
         // DOPPELKLICK
         clickStream.Buffer(clickStream.Throttle(TimeSpan.FromMilliseconds(250)))
             .Where(xs => xs.Count >= 2)
-            .Subscribe(xs => textfeld.text = ("DoubleClick Detected at X:" + initial_x + " Y:" + initial_y));
+            .Subscribe(xs => //textfeld.text = ("DoubleClick Detected at X:" + initial_x + " Y:" + initial_y)
+             {
+                 Debug.Log("Doppelklick");
+                 NavMeshMovement.instance.Move(pos);
+             }
+            );
 
 
         //Einfachklick!!!
@@ -61,7 +79,8 @@ public class TouchInput : MonoBehaviour
 
         OneClickStream.Buffer(clickStream.Throttle(TimeSpan.FromMilliseconds(250)))
             .Where(xs => xs.Count == 1)
-            .Subscribe(xs => { textfeld.text = ("Simple Click Detected at" + initial_x + " Y:" + initial_y);
+            .Subscribe(xs => { //textfeld.text = ("Simple Click Detected at" + initial_x + " Y:" + initial_y);
+
                 tooFarMoved = false; });
 
 
@@ -77,7 +96,7 @@ public class TouchInput : MonoBehaviour
         clickHoldStream.Buffer(clickHoldStream.Throttle(TimeSpan.FromMilliseconds(250)))
         .Where(xs => xs.Count >= 22)
         .Subscribe(xs => {
-            textfeld.text = "TOUCH-HOLD! at X:" + actual_x + " Y:" + actual_y;
+            //textfeld.text = "TOUCH-HOLD! at X:" + actual_x + " Y:" + actual_y;
             tooFarMoved = false;
         });
         //.Subscribe(xs => textfeld.text = "TOUCH-HOLD! and moved from X:" + initial_x + " Y:" + initial_y + "to NEW-X:" + Input.GetTouch(0).position.x + "NEW-Y:" + Input.GetTouch(0).position.y);

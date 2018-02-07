@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Menu_Scenes/OptionsMenu.unity
     guid: 933c53ca6b89bee428c63f569b5821fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_Scenes/TouchInput.unity
     guid: 8f43d402979fd234ca9af60bb473f8aa
+  - enabled: 1
+    path: Assets/Scenes/Test_Scenes/Diorama_Philipp_Test.unity
+    guid: 12858ab216cda1f40a0349eea86cc562
