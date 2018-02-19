@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 910183150}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 194981722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42ecc2096c1f2a44a44eb1a0ed8f606, type: 3}
+  m_Script: {fileID: 11500000, guid: e07217d08ff30e340be17fee0c730fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textfeld: {fileID: 0}
@@ -889,11 +889,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 506638120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d1090700bb6bb24ca5e97e834c5f2bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af30c6e58878f54bbbe72d2f63f1f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1810784567}
-  navMeshAgent: {fileID: 506638125}
 --- !u!1 &527554302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,13 +2280,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810784563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad2794952af1c34c85d9ecbe2affcef, type: 3}
+  m_Script: {fileID: 11500000, guid: bff2feb88cf24a34ebcf86f9a3f54b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 506638121}
   smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: 0}
-  zOffset: -4
+  offset: {x: 0, y: 2.5, z: -10}
+  zOffset: -10
   lastOrientation: 0
 --- !u!1 &1831255305
 GameObject:
