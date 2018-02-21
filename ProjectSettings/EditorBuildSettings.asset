@@ -5,39 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Menu_Scenes/MainMenu.unity
-    guid: 70cc8dde91fa4b646a317815a99c253a
-  - enabled: 0
-    path: Assets/Scenes/Game_Scenes/Junkyard_Scene_01.unity
-    guid: 79f14a382ba975249b7081cf5e04cac4
-  - enabled: 0
-    path: Assets/Scenes/Game_Scenes/Junkyard_Scene_02.unity
-    guid: bd4747989fcc50547845bd1f709b5e00
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Game_Scenes/Junkyard_Indoor_Scene_03.unity
-    guid: 5b863b1d50371bd47a9aa298c9e7e04e
-  - enabled: 0
-    path: Assets/Scenes/Game_Scenes/GameScene.unity
-    guid: a54afed37a15d42c5825e36603c7a7b8
-  - enabled: 0
-    path: Assets/Scenes/Game_Scenes/Kran_Szene.unity
-    guid: 69b9ad973076f1e4185d741955703534
-  - enabled: 0
-    path: Assets/Scenes/Menu_Scenes/OptionsMenu.unity
-    guid: 933c53ca6b89bee428c63f569b5821fe
-  - enabled: 0
-    path: Assets/Scenes/Test_Scenes/TouchInput.unity
-    guid: 8f43d402979fd234ca9af60bb473f8aa
   - enabled: 1
-    path: Assets/Scenes/Test_Scenes/Diorama_Philipp_Test.unity
-    guid: 12858ab216cda1f40a0349eea86cc562
+    path: Assets/new stuff/Scenes/Test_Scenes/Diorama_Philipp_Test.unity
+    guid: 67134f1c1f133cb4cb2bb1190395fce3

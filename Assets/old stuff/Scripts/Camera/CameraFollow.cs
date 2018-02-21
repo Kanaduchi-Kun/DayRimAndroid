@@ -22,7 +22,7 @@ public class CameraFollow : MonoBehaviour {
              .Subscribe(xs =>
              {
                  transform.eulerAngles = new Vector3(0,0,90.0f);
-                 offset.y = 6.5f;
+                 offset.y = 3.5f;
 
                  lastOrientation = DeviceOrientation.Portrait;
              });
