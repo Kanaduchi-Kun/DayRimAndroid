@@ -10,6 +10,10 @@ public class TouchInput : MonoBehaviour
 
     public static TouchInput instance;
 
+
+    public GameObject interactionPrefab;
+    //public GameObject canvas;
+
     public Text textfeld;
 
     bool tooFarMoved;
@@ -66,7 +70,7 @@ public class TouchInput : MonoBehaviour
             .Where(xs => xs.Count >= 2)
             .Subscribe(xs => //textfeld.text = ("DoubleClick Detected at X:" + initial_x + " Y:" + initial_y)
              {
-                 Debug.Log("Doppelklick");
+                
                  NavMeshMovement.instance.Move(pos);
              }
             );
@@ -75,13 +79,41 @@ public class TouchInput : MonoBehaviour
         //Einfachklick!!!
         var OneClickStream = Observable.EveryUpdate()
              .Where(_ => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended);
+             
+       // OneClickStream.Subscribe(xs => pos = Input.GetTouch(0).position);
              //.Where(_ => Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(0).phase == TouchPhase.Ended));
 
         OneClickStream.Buffer(clickStream.Throttle(TimeSpan.FromMilliseconds(250)))
             .Where(xs => xs.Count == 1)
             .Subscribe(xs => { //textfeld.text = ("Simple Click Detected at" + initial_x + " Y:" + initial_y);
 
-                tooFarMoved = false; });
+                
+                //pos = Input.GetTouch(0).position;
+
+                 Ray ray = Camera.main.ScreenPointToRay(pos);
+                 RaycastHit hit;
+
+                 if (Physics.Raycast(ray, out hit))
+                 {
+                    
+
+                     if (hit.collider.name == "felixdummy")
+                     {
+                        setInteractionPanel(pos, true);
+                     }
+                    else
+                    {
+                        setInteractionPanel(pos, false);
+                    }
+
+
+
+
+                 }
+
+                
+                tooFarMoved = false; }
+            );
 
 
 
@@ -159,6 +191,13 @@ public class TouchInput : MonoBehaviour
             textfeld.text = "User has " + fingerCount + " finger(s) touching the screen";
 
     */
+    }
+
+    void setInteractionPanel(Vector3 touchPos, bool visible)
+    {
+        interactionPrefab.transform.position = touchPos;
+        interactionPrefab.SetActive(visible);
+
     }
 }
 
