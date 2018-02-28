@@ -14,7 +14,7 @@ public class TouchInput : MonoBehaviour
     public GameObject interactionPrefab;
     //public GameObject canvas;
 
-    public Text textfeld;
+    public Text debugtext;
 
     bool tooFarMoved;
 
@@ -95,7 +95,20 @@ public class TouchInput : MonoBehaviour
 
                  if (Physics.Raycast(ray, out hit))
                  {
-                    
+
+                    ILookAt tmp = hit.collider.GetComponent<ILookAt>();
+
+
+                    if (tmp != null )
+                    {
+                        debugtext.text = hit.collider.name + " LOOK AT ERKANNT! ";
+                    }
+                    else
+                    {
+                        debugtext.text = hit.collider.name +  " LOOK AT NICHT ERKANNT! ";
+                    }
+                  
+
 
                      if (hit.collider.name == "felixdummy")
                      {
