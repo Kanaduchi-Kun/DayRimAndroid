@@ -56,7 +56,12 @@ public class NavMeshMovement : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit))
         {
+            //ohne es wieder false zu setzen würde der character nicht wieder laufen, weil er im data controller nach dem laden gestoppt wird.
+            navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(hit.point);
+          
+  
+
         }
     }
 }
