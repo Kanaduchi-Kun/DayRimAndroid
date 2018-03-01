@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITalkTo {
+public interface IPickUp {
 
-    
-    void TalkTo ();
-	
-	
+    void PickUp();
+
 }

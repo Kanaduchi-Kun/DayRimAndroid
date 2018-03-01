@@ -10,12 +10,23 @@ public class TouchInput : MonoBehaviour
 
     public static TouchInput instance;
 
+    // INTERACTION VARIABLES------------------------------------
+    public GameObject interactionPrefab; // GO, welches die 3 Buttons enthält
+    Button bTalkTo;
+    Button bPickUp;
+    Button bLookAt;
 
-    public GameObject interactionPrefab;
-    //public GameObject canvas;
+  
+    // Falls ein Object zum interagieren getouched wird, wird es hier zwischengespeichert und kann über die Instance dieses Objekts immer abgerufen werden.
+    public GameObject focusedObject;
 
+
+    
+        
     public Text debugtext;
 
+
+    //TOUCH Related variables-----------------------------------
     bool tooFarMoved;
 
     Vector3 pos;
@@ -27,6 +38,7 @@ public class TouchInput : MonoBehaviour
     float actual_y;
 
     public float tolerance = 30.0f;
+    //-----------------------------------------------------------
 
     private void Awake()
     {
@@ -46,6 +58,18 @@ public class TouchInput : MonoBehaviour
         actual_y = 0.0f;
 
         tooFarMoved = false;
+
+
+        //-----
+        Button[] buttons = interactionPrefab.GetComponentsInChildren<Button>(true);
+        bLookAt = buttons[0];
+        bLookAt.onClick.AddListener(() => ButtonPress(0));
+
+        bTalkTo = buttons[1];
+        bTalkTo.onClick.AddListener(() => ButtonPress(1));
+
+        bPickUp = buttons[2];
+        bPickUp.onClick.AddListener(() => ButtonPress(2));
     }
 
 
@@ -88,7 +112,7 @@ public class TouchInput : MonoBehaviour
             .Subscribe(xs => { //textfeld.text = ("Simple Click Detected at" + initial_x + " Y:" + initial_y);
 
                 
-                //pos = Input.GetTouch(0).position;
+               
 
                  Ray ray = Camera.main.ScreenPointToRay(pos);
                  RaycastHit hit;
@@ -96,21 +120,49 @@ public class TouchInput : MonoBehaviour
                  if (Physics.Raycast(ray, out hit))
                  {
 
-                    ILookAt tmp = hit.collider.GetComponent<ILookAt>();
+                    // temporäres Speichern des GO welches getouched wurde
+                    focusedObject = hit.collider.gameObject;
+
+                    //einzelne Interfaces, falls != null, sind die GO auch von diesem Typ
+                    ILookAt tmpLook = focusedObject.GetComponent<ILookAt>();
+                    IPickUp tmpPickUp = focusedObject.GetComponent<IPickUp>();
+                    ITalkTo tmpTalkTo = focusedObject.GetComponent<ITalkTo>();
+                    
 
 
-                    if (tmp != null )
+                    if (tmpLook != null )
                     {
-                        debugtext.text = hit.collider.name + " LOOK AT ERKANNT! ";
+                        setInteractionButton(0, true);
                     }
                     else
                     {
-                        debugtext.text = hit.collider.name +  " LOOK AT NICHT ERKANNT! ";
+                        setInteractionButton(0, false);
                     }
-                  
 
+                    if (tmpTalkTo != null)
+                    {
+                        //debugtext.text += hit.collider.name + " TALK TO ERKANNT! ";
+                        setInteractionButton(1, true);
+                    }
+                    else
+                    {
+                        setInteractionButton(1, false);
+                    }
 
-                     if (hit.collider.name == "felixdummy")
+                    if (tmpPickUp != null)
+                    {
+                        //debugtext.text += hit.collider.name + " PICK UP ERKANNT! ";
+                        setInteractionButton(2, true);
+                    }
+                    else
+                    {
+                        setInteractionButton(2, false);
+                    }
+
+                    setInteractionPanel(pos, true);
+
+                    /*
+                    if (hit.collider.name == "felixdummy")
                      {
                         setInteractionPanel(pos, true);
                      }
@@ -118,6 +170,7 @@ public class TouchInput : MonoBehaviour
                     {
                         setInteractionPanel(pos, false);
                     }
+                    */
 
 
 
@@ -210,6 +263,37 @@ public class TouchInput : MonoBehaviour
     {
         interactionPrefab.transform.position = touchPos;
         interactionPrefab.SetActive(visible);
+        
+
+
+    }
+
+    void setInteractionButton(int index, bool visible)
+    {
+        // index 0 = lookat, 1 = talk to, 2 = pickup
+
+        Button[] interactionButtons = interactionPrefab.GetComponentsInChildren<Button>(true);
+
+        interactionButtons[index].gameObject.SetActive(visible);
+
+        
+    }
+
+    void ButtonPress(int index)
+    {
+        switch(index)
+        {
+            case 0: focusedObject.GetComponent<ILookAt>().Look();
+                    break;
+
+            case 1: focusedObject.GetComponent<ITalkTo>().TalkTo();
+                    break;
+
+            case 2: focusedObject.GetComponent<IPickUp>().PickUp();
+                    break;
+
+            default: break;
+        }
 
     }
 }
