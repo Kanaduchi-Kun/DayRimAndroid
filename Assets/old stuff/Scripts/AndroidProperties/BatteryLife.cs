@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class BatteryLife {
 
 	//public Text batteryText;
+	public static float fakeBatteryLife = 100;
+	public static bool onSmartphone = true;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,8 @@ public class BatteryLife {
 
 	public static float GetBatteryLevel()
 	{
+		//HACK returning Battery life for PC use (if else)
+
 		#if UNITY_IOS
 		UIDevice device = UIDevice.CurrentDevice();
 		device.batteryMonitoringEnabled = true; // need to enable this first
@@ -64,7 +68,9 @@ public class BatteryLife {
 						}
 					}
 				}
-			} catch (System.Exception ex)
+			} 
+			
+			catch (System.Exception ex)
 			{
 
 			}
@@ -72,6 +78,12 @@ public class BatteryLife {
 
 		return 100;
 		#endif
+
+		//HACK for PC users
+		return fakeBatteryLife;
+		
+
+		
 	}
 
 

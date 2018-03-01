@@ -9,7 +9,7 @@ public class SoundLevel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 		soundText.text = "Sound Volume: " + GetSoundLevel ();
 	}
 	
@@ -87,6 +87,10 @@ public class SoundLevel : MonoBehaviour {
 
 		return text;
 		#endif
+
+		//HACK for Pc users
+		string tempText = "50";
+		return tempText;
 	}
 
 }
