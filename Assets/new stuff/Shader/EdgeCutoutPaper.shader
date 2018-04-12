@@ -150,5 +150,5 @@
 		}
 	}
 
-	//Fallback "Diffuse"
+	Fallback "VertexLit"
 }
