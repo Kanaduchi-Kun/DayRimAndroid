@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UniRx;
 
 public class CameraFollow : MonoBehaviour {
 
     public Transform target;
+
+
+    public GameObject canvas;
+
 
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
@@ -21,8 +26,13 @@ public class CameraFollow : MonoBehaviour {
              .Where(_ => Input.deviceOrientation == DeviceOrientation.Portrait && lastOrientation != DeviceOrientation.Portrait)
              .Subscribe(xs =>
              {
-                 transform.eulerAngles = new Vector3(0,0,90.0f);
+                 //transform.eulerAngles = new Vector3(0,0,-90.0f);
+                 transform.eulerAngles = new Vector3(0, 0, 0);
                  offset.y = 3.5f;
+
+                 TouchInput.instance.debugtext.text = "UI enthält Elemente: " + canvas.GetComponentsInChildren<Text>(true).Length + " " + canvas.GetComponentsInChildren<Text>(true)[0].gameObject.name;
+                 //foreach (Text uielement in canvas.GetComponentsInChildren<Text>(true))
+                 //{ uielement.transform.eulerAngles = new Vector3(0, 0, -90.0f); }
 
                  lastOrientation = DeviceOrientation.Portrait;
              });
@@ -33,6 +43,9 @@ public class CameraFollow : MonoBehaviour {
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 offset.y = 2.5f;
+
+               // foreach (Transform uielement in canvas.GetComponentsInChildren<Transform>(true))
+               //{ uielement.eulerAngles = new Vector3(0, 0, 0f); }
 
                 lastOrientation = DeviceOrientation.LandscapeRight;
             });

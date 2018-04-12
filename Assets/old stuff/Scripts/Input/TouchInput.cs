@@ -5,8 +5,11 @@ using UnityEngine.UI;
 using UniRx;
 using System;
 
+
+
 public class TouchInput : MonoBehaviour
 {
+    
 
     public static TouchInput instance;
 
@@ -78,7 +81,11 @@ public class TouchInput : MonoBehaviour
     void Start()
     {
 
-        
+
+        //Checking if running from PC or from Android for TESTING!!!!
+
+
+
         var clickStream = Observable.EveryUpdate()
               .Where(_ => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
 
@@ -236,28 +243,26 @@ public class TouchInput : MonoBehaviour
                   }
               });
 
+
+
     }
+    
+
+
+
 
     // Update is called once per frame
     void Update()
     {
-
-
-
-        /*
-
-        int fingerCount = 0;
-        foreach (Touch touch in Input.touches)
-        {
-            if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
-                fingerCount++;
-
-        }
-        if (fingerCount > 0)
-            textfeld.text = "User has " + fingerCount + " finger(s) touching the screen";
-
-    */
+#if UNITY_EDITOR
+        Debug.Log("HALLO HIER IST WINDOWS");
+#endif
+        Debug.Log("Bla");
     }
+
+
+
+
 
     void setInteractionPanel(Vector3 touchPos, bool visible)
     {
@@ -295,6 +300,7 @@ public class TouchInput : MonoBehaviour
             default: break;
         }
 
+        interactionPrefab.SetActive(false);
     }
 }
 

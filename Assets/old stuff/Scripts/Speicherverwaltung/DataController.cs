@@ -8,6 +8,11 @@ using System.IO;
 public class DataController : MonoBehaviour {
 
 
+
+
+    public static DataController instance;
+
+
     int currentScene;
 
     public float playerx;
@@ -17,8 +22,7 @@ public class DataController : MonoBehaviour {
 
     ArrayList items;
 
-    public static DataController instance;
-
+    public Junkyard junkprogress;
 
     private void Awake()
     {
@@ -31,6 +35,8 @@ public class DataController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        items = new ArrayList();
     }
 
 
@@ -48,6 +54,17 @@ public class DataController : MonoBehaviour {
             player.GetComponent<NavMeshMovement>().navMeshAgent.isStopped = true;
             
         }
+
+        if (GUI.Button(new Rect(10, 200, 100, 30), "AddItem"))
+        {
+            items.Add(new Item2("Item " + items.Count, "", 0, ""));
+        }
+
+        if (GUI.Button(new Rect(10, 240, 100, 30), "ShowItems"))
+        {
+            TouchInput.instance.debugtext.text = "item Anzahl: " + items.Count;
+        }
+
     }
 
     public void Save()
@@ -82,7 +99,7 @@ public class DataController : MonoBehaviour {
 
 
 [Serializable]
-class PlayerGameData
+public class PlayerGameData
 {
     //player coordinates
     private float playerx;
@@ -115,3 +132,45 @@ class PlayerGameData
     }
 
 }
+
+[Serializable]
+class Inventar
+{
+    private List<Item2> items;
+    
+    public Inventar()
+    {
+        items = new List<Item2>();
+    }
+
+    public void addItem(Item2 i)
+    {
+        items.Add(i);
+    }
+
+    public List<Item2> getAllItems()
+    {
+        return items;
+    }
+}
+
+
+[Serializable]
+public class Junkyard
+{
+    // Szenenprogress wird hier geflagt und später bei einem load wird die szene den bools angepasst
+    private bool CamperisHere;
+
+
+    public bool isCamperHere()
+    {
+        return CamperisHere;
+    }
+
+    public void setCamperEvent(bool camper)
+    {
+        CamperisHere = camper;
+    }
+
+}
+

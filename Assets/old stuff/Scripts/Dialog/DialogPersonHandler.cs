@@ -3,14 +3,6 @@ using System.Collections;
 
 public class DialogPersonHandler : MonoBehaviour {
 
-	// TESTELEMENTE
-	public Sprite duckSprite1;
-	public Sprite hexerichSprite1;
-
-	public AudioClip duckAudio1;
-
-	private DialogPerson duck;
-	private DialogPerson hexerich;
 
 	// Character Sprites
 	public Sprite Feli;
@@ -134,11 +126,6 @@ public class DialogPersonHandler : MonoBehaviour {
 
 
 
-
-		 duck = new DialogPerson("Duck", new DialogAudio(duckAudio1, 0.7f,1.5f), duckSprite1);
-
-		hexerich =  new DialogPerson("Hexerich", new DialogAudio(duckAudio1, 0.2f,0.5f), hexerichSprite1);
-
 	}
 	
 	// Update is called once per frame
@@ -150,16 +137,10 @@ public class DialogPersonHandler : MonoBehaviour {
 	{
 		DialogPerson tmp = null;
 
-		switch (name) 
+        Debug.Log("Der übergebene Name ist " + name);
+
+        switch (name) 
 		{
-		case "Duck": 
-			tmp = duck;
-			break;
-
-		case "Hexerich": 
-			tmp = hexerich;
-			break;
-
 		case "Feli": 
 			tmp = FeliProfil;
 			break;
@@ -194,7 +175,8 @@ public class DialogPersonHandler : MonoBehaviour {
 			break;
 
 		default:
-			break;
+                
+                break;
 		}
 
 		return tmp;

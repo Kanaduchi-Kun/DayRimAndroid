@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE dialogtree [
+    <!ELEMENT name ANY>
+    <!ELEMENT text ANY>
+     ]>
+
+<dialogtree>
+	<name>Mero</name>
+	<text>Hallo! </text>
+	<dialogtree>
+		<name>Syrx</name>
+		<text> Sersi</text>
+     	    <dialogtree>
+	    	<name>Syrx</name>
+	    	<text> Was geht?</text>
+	    </dialogtree>
+	    <dialogtree>
+	    	<name>Syrx</name>
+	    	<text> Was geht ab?</text>
+	    </dialogtree>
+  	    <dialogtree>
+	    	<name>Syrx</name>
+	    	<text> Was geht ab du banane?</text>
+	    </dialogtree>
+	</dialogtree>
+	<dialogtree>
+		<name>Mero</name>
+		<text> Ich führe selbstgespräche </text>
+       <dialogtree>
+	     	<name>Mero</name>
+	     	<text> Ich führe selbstgespräche </text>
+	     </dialogtree>
+       <dialogtree>
+	     	<name>Mero</name>
+	     	<text> Ich führe selbstgespräche </text>
+	     </dialogtree>
+	</dialogtree>
+</dialogtree>

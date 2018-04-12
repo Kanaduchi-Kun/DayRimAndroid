@@ -7,19 +7,16 @@ using System.Xml.Serialization;
 
 public class DialogTree {
 
-	[XmlAttribute("name")]
+	
 	public string name;
-	[XmlAttribute("text")]
+	
 	public string monologText;
 
-	//[XmlArray("Answer")]
-	//[XmlArrayItem("atext")]
-	[XmlArray("Answer")]
-	public ArrayList answers; 
+	
+	
+	//public ArrayList answers; 
 
-	//[XmlArray("Answer")]
-	//[XmlArrayItem("atext")]
-	[XmlArray("Tree")]
+	
 	public ArrayList subTrees;
 
 
@@ -27,7 +24,7 @@ public class DialogTree {
 	{
 		name = n;
 		monologText = text;
-		answers = new ArrayList ();
+		//answers = new ArrayList ();
 		subTrees = new ArrayList ();
 	}
 
@@ -41,11 +38,15 @@ public class DialogTree {
 		return monologText;
 	}
 
+    
 	public string getAnswerText(int i)
 	{
-		return (string) answers[i];
-	}
+        DialogTree sub = (DialogTree) subTrees[i];
 
+
+        return sub.getMonologText();
+	}
+    
 	public DialogTree getSubTree(int i)
 	{
 		return (DialogTree)subTrees [i];
@@ -58,7 +59,7 @@ public class DialogTree {
 
 	public void addAnswer(string a)
 	{
-		answers.Add (a);
+		//answers.Add (a);
 	}
 
 	public void addSubtree(DialogTree tree)
@@ -83,7 +84,7 @@ public class DialogTree {
 	{
 		bool tmp = false;
 
-		if (answers.Count > 1)
+		if (subTrees.Count > 2)
 			tmp = true;
 
 		return tmp;

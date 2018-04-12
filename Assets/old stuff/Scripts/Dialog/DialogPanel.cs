@@ -6,14 +6,15 @@ using System.Collections;
 public class DialogPanel : MonoBehaviour {
 
 
-	public Canvas dialogCanvas;
+    public static DialogPanel s_instance = null;
+
+    public Canvas dialogCanvas;
 	public Image dialog_panel;
 
 
-	public static DialogPanel s_instance = null;
 	public Image image;
 
-	public static DialogTree root;
+	public  DialogTree root;
 
 	private string ausgabeNachricht;
 
@@ -28,9 +29,6 @@ public class DialogPanel : MonoBehaviour {
 	public Button answer2;
 	public Button answer3;
 
-	public Button answer4;
-	public Button answer5;
-	public Button answer6;
 
 	public short pushedButton;
 	public bool buttonWasPushed = false;
@@ -59,18 +57,18 @@ public class DialogPanel : MonoBehaviour {
 		answer2.onClick.AddListener ( () => {selectButton(1);});
 		answer3.onClick.AddListener ( () => {selectButton(2);});
 
-		answer4.onClick.AddListener ( () => {selectButton(3);});
-		answer5.onClick.AddListener ( () => {selectButton(4);});
-		answer6.onClick.AddListener ( () => {selectButton(5);});
+		//answer4.onClick.AddListener ( () => {selectButton(3);});
+		//answer5.onClick.AddListener ( () => {selectButton(4);});
+		//answer6.onClick.AddListener ( () => {selectButton(5);});
 
 		//alle buttens vorerst disabled!
 		answer1.gameObject.SetActive(false);
 		answer2.gameObject.SetActive(false);
 		answer3.gameObject.SetActive(false);
 
-		answer4.gameObject.SetActive(false);
-		answer5.gameObject.SetActive(false);
-		answer6.gameObject.SetActive(false);
+		//answer4.gameObject.SetActive(false);
+		//answer5.gameObject.SetActive(false);
+		//answer6.gameObject.SetActive(false);
 
 		//nameField = transform.GetChild (1);
 		//textField = transform.GetChild (2);
@@ -122,9 +120,9 @@ public class DialogPanel : MonoBehaviour {
 					answer2.gameObject.SetActive (false);
 					answer3.gameObject.SetActive (false);
 
-					answer4.gameObject.SetActive (false);
-					answer5.gameObject.SetActive (false);
-					answer6.gameObject.SetActive (false);
+					//answer4.gameObject.SetActive (false);
+					//answer5.gameObject.SetActive (false);
+					//answer6.gameObject.SetActive (false);
 
 					textFinished = false;
 					//isTyping = false;
@@ -159,23 +157,8 @@ public class DialogPanel : MonoBehaviour {
 					a3.text = root.getAnswerText (2);
 				}
 
-				if (root.getAnswerTrees ().Count > 3) {
-					answer4.gameObject.SetActive (true);
-					Text a4 = answer4.GetComponentInChildren<Text> ();
-					a4.text = root.getAnswerText (3);
-				}
 
-				if (root.getAnswerTrees ().Count > 4) {
-					answer5.gameObject.SetActive (true);
-					Text a5 = answer5.GetComponentInChildren<Text> ();
-					a5.text = root.getAnswerText (4);
-				}
-
-				if (root.getAnswerTrees ().Count > 5) {
-					answer6.gameObject.SetActive (true);
-					Text a6 = answer6.GetComponentInChildren<Text> ();
-					a6.text = root.getAnswerText (5);
-				}
+				
 
 				// TEST!!!!
 				//textFinished = false;
@@ -189,10 +172,6 @@ public class DialogPanel : MonoBehaviour {
 				answer1.gameObject.SetActive (false);
 				answer2.gameObject.SetActive (false);
 				answer3.gameObject.SetActive (false);
-
-				answer4.gameObject.SetActive (false);
-				answer5.gameObject.SetActive (false);
-				answer6.gameObject.SetActive (false);
 
 				buttonWasPushed = false;
 
@@ -257,8 +236,7 @@ public class DialogPanel : MonoBehaviour {
 
 				//todo: play sound here if new word
 				if (newWord) {
-					//currentPerson = personen.getPerson (root.getName ());
-					//currentAudio = currentPerson.getVoice ();
+					
 
 					letterCount = 0;
 
@@ -269,18 +247,30 @@ public class DialogPanel : MonoBehaviour {
 					//}
 
 					updatePanel ();
-					RandomPitch (currentAudio);
-					//audio.PlayOneShot (currentAudio.soundClip);
-					audio.PlayOneShot(currentAudio.getRandomClip());
+
+                    // TO-DO AUDIO!!!!!!
+                    RandomPitch (currentAudio);
+					
+
+
+                    //TO-DO AUDIO!!!!!
+					//
+                    audio.PlayOneShot(currentAudio.getRandomClip());
+                    //
+
 
 					newWord = false;
 				} else if (!newWord && (letterCount % newAudioAfterLetters) == 0)
 				{
 					
 					updatePanel ();
-					RandomPitch (currentAudio);
-					//audio.PlayOneShot (currentAudio.soundClip);
+                    // TO-DO AUDIO!!!!!!
+                    RandomPitch(currentAudio);
+					
+                    // TO-DO AUDIO!!!!!
+                    //
 					audio.PlayOneShot(currentAudio.getRandomClip());
+                    //
 
 				}
 
@@ -330,25 +320,25 @@ public class DialogPanel : MonoBehaviour {
 		audio.pitch = pitch;
 	}
 
-	/*void RandomAudio()
-	{
-		//currentAudio  = 
-	}*/
 
 	public void updatePanel()
 	{
+      
+       
 		currentPerson = personen.getPerson (root.getName ());
-		currentAudio = currentPerson.getVoice ();
+        if (currentPerson == null)
+        {
+            Debug.Log("personen IST NULL");
+        }
+        //Debug.Log(currentPerson.getName());
 
-		//Debug.Log (currentPerson.getSprite().name);
+
+        currentAudio = currentPerson.getVoice ();
+
+		
 
 		image.sprite = currentPerson.getSprite();
-
-		//TEST!!!!!
-		//textField.text = root.getMonologText ();
-
-		//Debug.Log (currentPerson.getSprite().name);
-
+        
 
 	}
 
